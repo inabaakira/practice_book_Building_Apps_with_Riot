@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Riot</title>
@@ -6,14 +6,20 @@
   </head>
   <body>
 
-    <h1>Pre-existing Content</h1>
-    <mytag></mytag>
-    <p>Riot and normal html play nicely together!</p>
-
-    <script src="mytag.tag" type="riot/tag"></script>
+    <stats></stats>
+    
+    <script src="stats.tag" type="riot/tag"></script>
     <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
     <script>
-     riot.mount('mytag')
+     // mount the stats tag but also pass in some
+     // words and a boolean flag
+     riot.mount('stats', {
+       words: [
+         'the','quick','brown','fox','jumped',
+           'over','the','lazy','dog'
+       ],
+       includeY: true
+     })
     </script>
   </body>
 </html>
